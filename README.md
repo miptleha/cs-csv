@@ -1,5 +1,5 @@
 # csharp_csv
-Read, write table to csv format
+Read, write data to file/stream in csv format
 
  File | Description
  --- | --- 
