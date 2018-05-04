@@ -10,4 +10,4 @@ Read, write table to csv format
 
 Open project in Visual Studio and run
 
-This code used in [a my simple ASP.NET application](https://github.com/miptleha/asp.net_braveland)]
+This code used in [my simple ASP.NET application](https://github.com/miptleha/asp.net_braveland)
