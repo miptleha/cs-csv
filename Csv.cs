@@ -9,10 +9,29 @@ namespace CsvInOut
 {
     class Csv
     {
-        public static TableData ReadCsv(MemoryStream ms)
+        public static TableData ReadCsv(string path)
+        {
+            if (!File.Exists(path))
+                return null;
+
+            using (var fs = File.OpenRead(path))
+            {
+                return ReadCsv(fs);
+            }
+        }
+
+        public static void WriteCsv(string path, TableData data)
+        {
+            using (var fs = File.Open(path, FileMode.Create, FileAccess.Write))
+            {
+                WriteCsv(fs, data);
+            }
+        }
+
+        public static TableData ReadCsv(Stream ms)
         {
             var data = new TableData();
-            StreamReader sr = new StreamReader(ms);
+            StreamReader sr = new StreamReader(ms, Encoding.UTF8);
             string s = sr.ReadLine();
             if (s != null)
                 data.Header.AddRange(s.Split(new string[] { ", " }, StringSplitOptions.None));
@@ -23,17 +42,15 @@ namespace CsvInOut
             return data;
         }
 
-        public static MemoryStream WriteCsv(TableData data)
+        public static void WriteCsv(Stream ms, TableData data)
         {
-            var ms = new MemoryStream();
-            StreamWriter sw = new StreamWriter(ms);
+            StreamWriter sw = new StreamWriter(ms, Encoding.UTF8);
             sw.WriteLine(String.Join(", ", data.Header));
             foreach (var r in data.Content)
             {
                 sw.WriteLine(String.Join(", ", r));
             }
             sw.Flush();
-            return ms;
         }
     }
 }

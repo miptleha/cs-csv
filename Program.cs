@@ -23,7 +23,8 @@ namespace CsvInOut
                 }
                 data.Content.Add(new string[] { "\"", "'", ", ", ", ", "a" });
 
-                var ms = Csv.WriteCsv(data);
+                var ms = new MemoryStream();
+                Csv.WriteCsv(ms, data);
 
                 ms.Position = 0;
                 WriteToConsole(ms);
@@ -31,15 +32,7 @@ namespace CsvInOut
                 ms.Position = 0;
                 var data1 = Csv.ReadCsv(ms);
 
-                ms = Csv.WriteCsv(data1);
-
-                ms.Position = 0;
-                WriteToConsole(ms);
-
-                ms.Position = 0;
-                var data2 = Csv.ReadCsv(ms);
-
-                string res = Comparer.Compare(data, data1) ?? Comparer.Compare(data1, data2);
+                string res = Comparer.Compare(data, data1);
                 if (res == null)
                     Console.WriteLine("Test passed");
                 else

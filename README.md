@@ -1,6 +1,13 @@
 # csharp_csv
 Read, write table to csv format
 
-Tables are stored as custom object: List<string> (header) + List<List<string>> (content)
+| File | Description |
+| --- | --- |
+| Csv.cs | Methods for loading/saving csv from file/stream |
+| TableData.cs | Classes for storing cvs (Header: List<string> + Content: List<List<string>>) |
+| Comparer.cs (bonus) | Compare content of objects with user-friendly output where differs |
+| Program.cs | Test application |
 
-Csv stored in memory, in future I will add storing csv to file in specified encoding
+Open project in Visual Studio and run
+
+This code used in my simple ASP.NET application
