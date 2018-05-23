@@ -3,10 +3,10 @@ Read, write data to file/stream in csv format
 
  File | Description
  --- | --- 
- Csv.cs | Methods for loading/saving csv from file/stream
- TableData.cs | Classes for storing cvs
- Comparer.cs (bonus) | Compare content of objects with user-friendly output where differs
- Program.cs | Test application 
+ [Csv.cs](Csv.cs) | Methods for loading/saving csv from file/stream
+ [TableData.cs](TableData.cs) | Classes for storing cvs
+ [Comparer.cs](Comparer.cs) (bonus) | Compare content of objects with user-friendly output where differs
+ [Program.cs](Program.cs) | Test application 
 
 Open project in Visual Studio and run
 
