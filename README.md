@@ -1,4 +1,4 @@
-# csharp_csv
+# csharp-csv
 Read, write data to file/stream in csv format
 
  File | Description
