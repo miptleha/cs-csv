@@ -1,5 +1,5 @@
-# csharp-csv
-Read, write data to file/stream in csv format
+Read, write data to file/stream in csv format.  
+This is simplest implementation of database (10 rows of code)
 
  File | Description
  --- | --- 
@@ -10,4 +10,4 @@ Read, write data to file/stream in csv format
 
 Open project in Visual Studio and run
 
-This code used in [my simple ASP.NET application](https://github.com/miptleha/asp.net_braveland)
+This code used in [my simple ASP.NET application](https://github.com/miptleha/asp-braveland)
