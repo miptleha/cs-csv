@@ -1,5 +1,5 @@
 Read, write data to file/stream in csv format.  
-This is simplest implementation of database (50 rows of code).  
+This is simplest implementation of database.  
 Data can be stored in string, on filesystem or in any stream.  
 
  File | Description
