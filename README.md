@@ -5,7 +5,7 @@ Data can be stored in string, on filesystem or in any stream.
  File | Description
  --- | --- 
  [Csv.cs](Csv.cs) | Methods for loading/saving csv from file/stream
- [TableData.cs](TableData.cs) | Classes for storing cvs
+ [TableData.cs](TableData.cs) | Classes for storing data
  [Comparer.cs](Comparer.cs) (bonus) | Compare content of objects with user-friendly output where differs
  [Program.cs](Program.cs) | Test application 
 
