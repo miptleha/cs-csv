@@ -46,6 +46,25 @@ namespace CsvInOut
                     i++;
                 }
             }
+            else if (typeof(System.Collections.IEnumerable).IsAssignableFrom(type))
+            {
+                System.Collections.IEnumerable first = obj1 as System.Collections.IEnumerable;
+                System.Collections.IEnumerable second = obj2 as System.Collections.IEnumerable;
+
+                var en = first.GetEnumerator();
+                var en2 = second.GetEnumerator();
+                int i = 0;
+                while (en.MoveNext())
+                {
+                    if (!en2.MoveNext())
+                        return path + ": enumerable size differs";
+
+                    string res = Compare(en.Current, en2.Current, path);
+                    if (res != null)
+                        return res;
+                    i++;
+                }
+            }
             else
             {
                 foreach (PropertyInfo pi in type.GetProperties(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public))

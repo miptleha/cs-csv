@@ -21,7 +21,7 @@ namespace CsvInOut
                     string prefix = "val" + i;
                     data.Content.Add(new string[] { prefix + "1", prefix + "2", prefix + "3", prefix + "4" });
                 }
-                data.Content.Add(new string[] { "\"", "'", ", ", ", ", "a" });
+                data.Content.Add(new string[] { "\"", "; ; d;;;;;", "here \" character", "; character" });
 
                 var ms = new MemoryStream();
                 Csv.WriteCsv(ms, data);
